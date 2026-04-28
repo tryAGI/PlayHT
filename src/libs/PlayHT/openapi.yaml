@@ -1,0 +1,289 @@
+openapi: 3.0.3
+info:
+  title: PlayAI API
+  version: "1.0.0"
+  description: |
+    Focused OpenAPI description for PlayAI / PlayHT text-to-speech APIs.
+    The upstream documentation is published at https://docs.play.ai/.
+  contact:
+    name: PlayAI
+    url: https://docs.play.ai/
+servers:
+  - url: https://api.play.ai
+    description: Production
+security:
+  - BearerAuth: []
+    UserIdAuth: []
+tags:
+  - name: TextToSpeech
+  - name: Voices
+  - name: WebSocket
+paths:
+  /api/v1/tts:
+    post:
+      tags:
+        - TextToSpeech
+      operationId: createSpeech
+      summary: Create an asynchronous text-to-speech job
+      description: Returns a job ID that can be polled with `GET /api/v1/tts/{asyncTtsJobId}`.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateSpeechRequest"
+      responses:
+        "200":
+          description: Async TTS job accepted.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CreateSpeechResponse"
+        "400":
+          description: Invalid request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /api/v1/tts/{asyncTtsJobId}:
+    get:
+      tags:
+        - TextToSpeech
+      operationId: getSpeechJob
+      summary: Get an asynchronous TTS job
+      parameters:
+        - name: asyncTtsJobId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        "200":
+          description: Current async TTS job state.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SpeechJob"
+        "404":
+          description: Job not found.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /api/v1/tts/stream:
+    post:
+      tags:
+        - TextToSpeech
+      operationId: streamSpeech
+      summary: Stream generated speech bytes
+      description: Streams audio bytes from the selected PlayAI model.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/StreamSpeechRequest"
+      responses:
+        "200":
+          description: Generated audio bytes.
+          content:
+            audio/mpeg:
+              schema:
+                type: string
+                format: binary
+            audio/wav:
+              schema:
+                type: string
+                format: binary
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        "400":
+          description: Invalid request.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ErrorResponse"
+
+  /api/v1/voices:
+    get:
+      tags:
+        - Voices
+      operationId: listVoices
+      summary: List prebuilt voices
+      responses:
+        "200":
+          description: Available PlayAI voices.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ListVoicesResponse"
+
+  /api/v1/tts/websocket-auth:
+    post:
+      tags:
+        - WebSocket
+      operationId: createWebSocketAuth
+      summary: Create short-lived WebSocket URLs for realtime TTS
+      responses:
+        "200":
+          description: Authenticated WebSocket URLs.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/WebSocketAuthResponse"
+
+components:
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      description: "PlayAI API key as `Authorization: Bearer <api-key>`."
+    UserIdAuth:
+      type: apiKey
+      in: header
+      name: X-USER-ID
+      description: PlayAI user ID from the developer credentials page.
+
+  schemas:
+    OutputFormat:
+      type: string
+      enum:
+        - mp3
+        - wav
+        - pcm
+        - flac
+        - ogg
+
+    TtsModel:
+      type: string
+      enum:
+        - PlayDialog
+        - PlayDialog-turbo
+        - Play3.0-mini
+
+    CreateSpeechRequest:
+      type: object
+      required:
+        - text
+        - voice
+      properties:
+        text:
+          type: string
+        voice:
+          type: string
+          description: Voice ID or cloned voice manifest URL.
+        model:
+          $ref: "#/components/schemas/TtsModel"
+        output_format:
+          $ref: "#/components/schemas/OutputFormat"
+        speed:
+          type: number
+          format: float
+          minimum: 0.5
+          maximum: 2
+        temperature:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        voice_engine:
+          type: string
+        language:
+          type: string
+
+    StreamSpeechRequest:
+      allOf:
+        - $ref: "#/components/schemas/CreateSpeechRequest"
+        - type: object
+          properties:
+            request_id:
+              type: string
+
+    CreateSpeechResponse:
+      type: object
+      properties:
+        id:
+          type: string
+        job_id:
+          type: string
+        asyncTtsJobId:
+          type: string
+        status:
+          type: string
+
+    SpeechJob:
+      type: object
+      properties:
+        id:
+          type: string
+        status:
+          type: string
+        audio_url:
+          type: string
+          format: uri
+        output:
+          type: object
+          additionalProperties: true
+        error:
+          type: string
+
+    Voice:
+      type: object
+      properties:
+        id:
+          type: string
+        name:
+          type: string
+        voice:
+          type: string
+        language:
+          type: string
+        language_code:
+          type: string
+        gender:
+          type: string
+        accent:
+          type: string
+        style:
+          type: string
+        sample_url:
+          type: string
+          format: uri
+
+    ListVoicesResponse:
+      oneOf:
+        - type: array
+          items:
+            $ref: "#/components/schemas/Voice"
+        - type: object
+          properties:
+            voices:
+              type: array
+              items:
+                $ref: "#/components/schemas/Voice"
+
+    WebSocketAuthResponse:
+      type: object
+      properties:
+        webSocketUrls:
+          type: object
+          additionalProperties:
+            type: string
+            format: uri
+        expiresAt:
+          type: string
+          format: date-time
+
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
+        statusCode:
+          type: integer
