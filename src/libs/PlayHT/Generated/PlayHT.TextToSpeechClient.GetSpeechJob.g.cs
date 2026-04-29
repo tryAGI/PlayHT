@@ -132,7 +132,7 @@ namespace PlayHT
                 PrepareGetSpeechJobRequest(
                     httpClient: HttpClient,
                     httpRequestMessage: __httpRequest,
-                    asyncTtsJobId: asyncTtsJobId);
+                    asyncTtsJobId: asyncTtsJobId!);
 
                 return __httpRequest;
             }
