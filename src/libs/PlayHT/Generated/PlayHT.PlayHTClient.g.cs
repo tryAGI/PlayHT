@@ -44,7 +44,7 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
-        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, authorizations: Authorizations, options: Options)
+        public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -53,7 +53,7 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
-        public VoicesClient Voices => new VoicesClient(HttpClient, authorizations: Authorizations, options: Options)
+        public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -62,7 +62,7 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
-        public WebSocketClient WebSocket => new WebSocketClient(HttpClient, authorizations: Authorizations, options: Options)
+        public WebSocketClient WebSocket => new WebSocketClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
             ReadResponseAsString = ReadResponseAsString,
             JsonSerializerContext = JsonSerializerContext,
@@ -101,10 +101,10 @@ namespace PlayHT
         /// <param name="options">Client-wide request defaults such as headers, query parameters, retries, and timeout.</param>
         /// <param name="disposeHttpClient">Dispose the HttpClient when the instance is disposed. True by default.</param>
         public PlayHTClient(
-            global::System.Net.Http.HttpClient? httpClient = null,
-            global::System.Uri? baseUri = null,
-            global::System.Collections.Generic.List<global::PlayHT.EndPointAuthorization>? authorizations = null,
-            global::PlayHT.AutoSDKClientOptions? options = null,
+            global::System.Net.Http.HttpClient? httpClient,
+            global::System.Uri? baseUri,
+            global::System.Collections.Generic.List<global::PlayHT.EndPointAuthorization>? authorizations,
+            global::PlayHT.AutoSDKClientOptions? options,
             bool disposeHttpClient = true)
         {
 
