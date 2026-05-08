@@ -29,6 +29,19 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickListVoicesResponseVariant1(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::System.Collections.Generic.IList<global::PlayHT.Voice>? value)
+        {
+            value = ListVoicesResponseVariant1;
+            return IsListVoicesResponseVariant1;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PlayHT.ListVoicesResponseVariant2? ListVoicesResponseVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace PlayHT
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListVoicesResponseVariant2))]
 #endif
         public bool IsListVoicesResponseVariant2 => ListVoicesResponseVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickListVoicesResponseVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PlayHT.ListVoicesResponseVariant2? value)
+        {
+            value = ListVoicesResponseVariant2;
+            return IsListVoicesResponseVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -100,8 +126,8 @@ namespace PlayHT
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::System.Collections.Generic.IList<global::PlayHT.Voice>?, TResult>? listVoicesResponseVariant1 = null,
-            global::System.Func<global::PlayHT.ListVoicesResponseVariant2?, TResult>? listVoicesResponseVariant2 = null,
+            global::System.Func<global::System.Collections.Generic.IList<global::PlayHT.Voice>, TResult>? listVoicesResponseVariant1 = null,
+            global::System.Func<global::PlayHT.ListVoicesResponseVariant2, TResult>? listVoicesResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -125,8 +151,32 @@ namespace PlayHT
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::System.Collections.Generic.IList<global::PlayHT.Voice>?>? listVoicesResponseVariant1 = null,
-            global::System.Action<global::PlayHT.ListVoicesResponseVariant2?>? listVoicesResponseVariant2 = null,
+            global::System.Action<global::System.Collections.Generic.IList<global::PlayHT.Voice>>? listVoicesResponseVariant1 = null,
+
+            global::System.Action<global::PlayHT.ListVoicesResponseVariant2>? listVoicesResponseVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsListVoicesResponseVariant1)
+            {
+                listVoicesResponseVariant1?.Invoke(ListVoicesResponseVariant1!);
+            }
+            else if (IsListVoicesResponseVariant2)
+            {
+                listVoicesResponseVariant2?.Invoke(ListVoicesResponseVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::System.Collections.Generic.IList<global::PlayHT.Voice>>? listVoicesResponseVariant1 = null,
+            global::System.Action<global::PlayHT.ListVoicesResponseVariant2>? listVoicesResponseVariant2 = null,
             bool validate = true)
         {
             if (validate)
