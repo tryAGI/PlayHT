@@ -29,6 +29,19 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
+        public bool TryPickCreate(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PlayHT.CreateSpeechRequest? value)
+        {
+            value = Create;
+            return IsCreate;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PlayHT.StreamSpeechRequestVariant2? StreamSpeechRequestVariant2 { get; init; }
 #else
@@ -42,6 +55,19 @@ namespace PlayHT
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(StreamSpeechRequestVariant2))]
 #endif
         public bool IsStreamSpeechRequestVariant2 => StreamSpeechRequestVariant2 != null;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public bool TryPickStreamSpeechRequestVariant2(
+#if NET6_0_OR_GREATER
+            [global::System.Diagnostics.CodeAnalysis.NotNullWhen(true)]
+#endif
+            out global::PlayHT.StreamSpeechRequestVariant2? value)
+        {
+            value = StreamSpeechRequestVariant2;
+            return IsStreamSpeechRequestVariant2;
+        }
         /// <summary>
         /// 
         /// </summary>
@@ -118,8 +144,8 @@ namespace PlayHT
         /// 
         /// </summary>
         public TResult? Match<TResult>(
-            global::System.Func<global::PlayHT.CreateSpeechRequest?, TResult>? create = null,
-            global::System.Func<global::PlayHT.StreamSpeechRequestVariant2?, TResult>? streamSpeechRequestVariant2 = null,
+            global::System.Func<global::PlayHT.CreateSpeechRequest, TResult>? create = null,
+            global::System.Func<global::PlayHT.StreamSpeechRequestVariant2, TResult>? streamSpeechRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
@@ -143,8 +169,32 @@ namespace PlayHT
         /// 
         /// </summary>
         public void Match(
-            global::System.Action<global::PlayHT.CreateSpeechRequest?>? create = null,
-            global::System.Action<global::PlayHT.StreamSpeechRequestVariant2?>? streamSpeechRequestVariant2 = null,
+            global::System.Action<global::PlayHT.CreateSpeechRequest>? create = null,
+
+            global::System.Action<global::PlayHT.StreamSpeechRequestVariant2>? streamSpeechRequestVariant2 = null,
+            bool validate = true)
+        {
+            if (validate)
+            {
+                Validate();
+            }
+
+            if (IsCreate)
+            {
+                create?.Invoke(Create!);
+            }
+            else if (IsStreamSpeechRequestVariant2)
+            {
+                streamSpeechRequestVariant2?.Invoke(StreamSpeechRequestVariant2!);
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public void Switch(
+            global::System.Action<global::PlayHT.CreateSpeechRequest>? create = null,
+            global::System.Action<global::PlayHT.StreamSpeechRequestVariant2>? streamSpeechRequestVariant2 = null,
             bool validate = true)
         {
             if (validate)
