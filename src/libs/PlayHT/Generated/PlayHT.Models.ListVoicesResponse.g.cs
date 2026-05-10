@@ -42,6 +42,13 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
+        public global::System.Collections.Generic.IList<global::PlayHT.Voice> PickListVoicesResponseVariant1() => IsListVoicesResponseVariant1
+            ? ListVoicesResponseVariant1!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListVoicesResponseVariant1' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PlayHT.ListVoicesResponseVariant2? ListVoicesResponseVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace PlayHT
             value = ListVoicesResponseVariant2;
             return IsListVoicesResponseVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PlayHT.ListVoicesResponseVariant2 PickListVoicesResponseVariant2() => IsListVoicesResponseVariant2
+            ? ListVoicesResponseVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'ListVoicesResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>

@@ -48,5 +48,6 @@ namespace PlayHT
         public WebSocketAuthResponse()
         {
         }
+
     }
 }

@@ -39,5 +39,6 @@ namespace PlayHT
         public ListVoicesResponseVariant2()
         {
         }
+
     }
 }

@@ -57,5 +57,6 @@ namespace PlayHT
         public ErrorResponse()
         {
         }
+
     }
 }
