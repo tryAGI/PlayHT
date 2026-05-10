@@ -89,6 +89,11 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
+        public static StreamSpeechRequest FromCreate(global::PlayHT.CreateSpeechRequest? value) => new StreamSpeechRequest(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public static implicit operator StreamSpeechRequest(global::PlayHT.StreamSpeechRequestVariant2 value) => new StreamSpeechRequest((global::PlayHT.StreamSpeechRequestVariant2?)value);
 
         /// <summary>
@@ -103,6 +108,11 @@ namespace PlayHT
         {
             StreamSpeechRequestVariant2 = value;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public static StreamSpeechRequest FromStreamSpeechRequestVariant2(global::PlayHT.StreamSpeechRequestVariant2? value) => new StreamSpeechRequest(value);
 
         /// <summary>
         /// 
