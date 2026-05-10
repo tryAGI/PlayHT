@@ -89,6 +89,11 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
+        public static ListVoicesResponse FromListVoicesResponseVariant2(global::PlayHT.ListVoicesResponseVariant2? value) => new ListVoicesResponse(value);
+
+        /// <summary>
+        /// 
+        /// </summary>
         public ListVoicesResponse(
             global::System.Collections.Generic.IList<global::PlayHT.Voice>? listVoicesResponseVariant1,
             global::PlayHT.ListVoicesResponseVariant2? listVoicesResponseVariant2
