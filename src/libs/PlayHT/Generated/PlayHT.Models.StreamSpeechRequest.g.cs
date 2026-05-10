@@ -42,6 +42,13 @@ namespace PlayHT
         /// <summary>
         /// 
         /// </summary>
+        public global::PlayHT.CreateSpeechRequest PickCreate() => IsCreate
+            ? Create!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
+
+        /// <summary>
+        /// 
+        /// </summary>
 #if NET6_0_OR_GREATER
         public global::PlayHT.StreamSpeechRequestVariant2? StreamSpeechRequestVariant2 { get; init; }
 #else
@@ -68,6 +75,13 @@ namespace PlayHT
             value = StreamSpeechRequestVariant2;
             return IsStreamSpeechRequestVariant2;
         }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        public global::PlayHT.StreamSpeechRequestVariant2 PickStreamSpeechRequestVariant2() => IsStreamSpeechRequestVariant2
+            ? StreamSpeechRequestVariant2!
+            : throw new global::System.InvalidOperationException($"Expected union variant 'StreamSpeechRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         /// 
         /// </summary>
