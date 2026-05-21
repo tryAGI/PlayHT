@@ -83,6 +83,7 @@ namespace PlayHT.JsonConverters
             {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PlayHT.CreateSpeechRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PlayHT.CreateSpeechRequest> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PlayHT.CreateSpeechRequest).Name}");
                     create = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);
@@ -93,9 +94,13 @@ namespace PlayHT.JsonConverters
                 catch (global::System.InvalidOperationException)
                 {
                 }
+            }
 
+            if (create == null && streamSpeechRequestVariant2 == null)
+            {
                 try
                 {
+
                     var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PlayHT.StreamSpeechRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PlayHT.StreamSpeechRequestVariant2> ??
                                    throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PlayHT.StreamSpeechRequestVariant2).Name}");
                     streamSpeechRequestVariant2 = global::System.Text.Json.JsonSerializer.Deserialize(__rawJson, typeInfo);

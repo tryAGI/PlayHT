@@ -39,5 +39,6 @@ namespace PlayHT
         public StreamSpeechRequestVariant2()
         {
         }
+
     }
 }
