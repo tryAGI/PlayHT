@@ -4,7 +4,7 @@
 namespace PlayHT
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class SpeechJobOutput
     {

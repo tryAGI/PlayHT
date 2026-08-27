@@ -39,7 +39,7 @@ namespace PlayHT
         internal global::System.Lazy<global::System.Text.Json.Serialization.JsonSerializerContext> JsonSerializerContextProvider { get; set; } = new(() => global::PlayHT.SourceGenerationContext.Default);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Text.Json.Serialization.JsonSerializerContext JsonSerializerContext
         {
@@ -49,7 +49,7 @@ namespace PlayHT
 
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TextToSpeechClient TextToSpeech => new TextToSpeechClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -58,7 +58,7 @@ namespace PlayHT
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public VoicesClient Voices => new VoicesClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {
@@ -67,7 +67,7 @@ namespace PlayHT
         };
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public WebSocketClient WebSocket => new WebSocketClient(HttpClient, baseUri: null, authorizations: Authorizations, options: Options)
         {

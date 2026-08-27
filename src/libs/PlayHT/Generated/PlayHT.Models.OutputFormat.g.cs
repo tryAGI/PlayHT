@@ -4,28 +4,28 @@
 namespace PlayHT
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum OutputFormat
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Flac,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Mp3,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Ogg,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Pcm,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Wav,
     }

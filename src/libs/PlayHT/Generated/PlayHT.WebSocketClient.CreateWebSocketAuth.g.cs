@@ -132,7 +132,7 @@ namespace PlayHT
                          __authorization.Location == "Header")
                 {
                     __httpRequest.Headers.Add(__authorization.Name, __authorization.Value);
-                } 
+                }
             }
                 global::PlayHT.AutoSDKRequestOptionsSupport.ApplyHeaders(
                     request: __httpRequest,

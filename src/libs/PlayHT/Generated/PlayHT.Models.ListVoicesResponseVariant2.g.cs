@@ -4,12 +4,12 @@
 namespace PlayHT
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class ListVoicesResponseVariant2
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("voices")]
         public global::System.Collections.Generic.IList<global::PlayHT.Voice>? Voices { get; set; }

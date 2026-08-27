@@ -4,18 +4,18 @@
 namespace PlayHT
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public sealed partial class WebSocketAuthResponse
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("webSocketUrls")]
         public global::System.Collections.Generic.Dictionary<string, string>? WebSocketUrls { get; set; }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         [global::System.Text.Json.Serialization.JsonPropertyName("expiresAt")]
         public global::System.DateTime? ExpiresAt { get; set; }

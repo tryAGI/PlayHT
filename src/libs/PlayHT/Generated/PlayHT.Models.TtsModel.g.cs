@@ -4,20 +4,20 @@
 namespace PlayHT
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public enum TtsModel
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
         Play30Mini,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlayDialog,
         /// <summary>
-        /// 
+        ///
         /// </summary>
         PlayDialogTurbo,
     }
