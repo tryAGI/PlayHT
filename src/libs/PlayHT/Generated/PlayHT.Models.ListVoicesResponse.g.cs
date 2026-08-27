@@ -5,12 +5,12 @@
 namespace PlayHT
 {
     /// <summary>
-    /// 
+    ///
     /// </summary>
     public readonly partial struct ListVoicesResponse : global::System.IEquatable<ListVoicesResponse>
     {
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::System.Collections.Generic.IList<global::PlayHT.Voice>? ListVoicesResponseVariant1 { get; init; }
@@ -19,7 +19,7 @@ namespace PlayHT
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListVoicesResponseVariant1))]
@@ -27,7 +27,7 @@ namespace PlayHT
         public bool IsListVoicesResponseVariant1 => ListVoicesResponseVariant1 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickListVoicesResponseVariant1(
 #if NET6_0_OR_GREATER
@@ -40,14 +40,14 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::System.Collections.Generic.IList<global::PlayHT.Voice> PickListVoicesResponseVariant1() => IsListVoicesResponseVariant1
             ? ListVoicesResponseVariant1!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListVoicesResponseVariant1' but the value was {ToString()}.");
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         public global::PlayHT.ListVoicesResponseVariant2? ListVoicesResponseVariant2 { get; init; }
@@ -56,7 +56,7 @@ namespace PlayHT
 #endif
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
 #if NET6_0_OR_GREATER
         [global::System.Diagnostics.CodeAnalysis.MemberNotNullWhen(true, nameof(ListVoicesResponseVariant2))]
@@ -64,7 +64,7 @@ namespace PlayHT
         public bool IsListVoicesResponseVariant2 => ListVoicesResponseVariant2 != null;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool TryPickListVoicesResponseVariant2(
 #if NET6_0_OR_GREATER
@@ -77,23 +77,23 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public global::PlayHT.ListVoicesResponseVariant2 PickListVoicesResponseVariant2() => IsListVoicesResponseVariant2
             ? ListVoicesResponseVariant2!
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListVoicesResponseVariant2' but the value was {ToString()}.");
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator ListVoicesResponse(global::PlayHT.ListVoicesResponseVariant2 value) => new ListVoicesResponse((global::PlayHT.ListVoicesResponseVariant2?)value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static implicit operator global::PlayHT.ListVoicesResponseVariant2?(ListVoicesResponse @this) => @this.ListVoicesResponseVariant2;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ListVoicesResponse(global::PlayHT.ListVoicesResponseVariant2? value)
         {
@@ -101,12 +101,12 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static ListVoicesResponse FromListVoicesResponseVariant2(global::PlayHT.ListVoicesResponseVariant2? value) => new ListVoicesResponse(value);
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public ListVoicesResponse(
             global::System.Collections.Generic.IList<global::PlayHT.Voice>? listVoicesResponseVariant1,
@@ -118,23 +118,23 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public object? Object =>
             ListVoicesResponseVariant2 as object ??
-            ListVoicesResponseVariant1 as object 
+            ListVoicesResponseVariant1 as object
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override string? ToString() =>
             ListVoicesResponseVariant1?.ToString() ??
-            ListVoicesResponseVariant2?.ToString() 
+            ListVoicesResponseVariant2?.ToString()
             ;
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Validate()
         {
@@ -142,7 +142,7 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public TResult? Match<TResult>(
             global::System.Func<global::System.Collections.Generic.IList<global::PlayHT.Voice>, TResult>? listVoicesResponseVariant1 = null,
@@ -167,7 +167,7 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Match(
             global::System.Action<global::System.Collections.Generic.IList<global::PlayHT.Voice>>? listVoicesResponseVariant1 = null,
@@ -191,7 +191,7 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public void Switch(
             global::System.Action<global::System.Collections.Generic.IList<global::PlayHT.Voice>>? listVoicesResponseVariant1 = null,
@@ -214,7 +214,7 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override int GetHashCode()
         {
@@ -235,18 +235,18 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public bool Equals(ListVoicesResponse other)
         {
             return
                 global::System.Collections.Generic.EqualityComparer<global::System.Collections.Generic.IList<global::PlayHT.Voice>?>.Default.Equals(ListVoicesResponseVariant1, other.ListVoicesResponseVariant1) &&
-                global::System.Collections.Generic.EqualityComparer<global::PlayHT.ListVoicesResponseVariant2?>.Default.Equals(ListVoicesResponseVariant2, other.ListVoicesResponseVariant2) 
+                global::System.Collections.Generic.EqualityComparer<global::PlayHT.ListVoicesResponseVariant2?>.Default.Equals(ListVoicesResponseVariant2, other.ListVoicesResponseVariant2)
                 ;
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator ==(ListVoicesResponse obj1, ListVoicesResponse obj2)
         {
@@ -254,7 +254,7 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public static bool operator !=(ListVoicesResponse obj1, ListVoicesResponse obj2)
         {
@@ -262,7 +262,7 @@ namespace PlayHT
         }
 
         /// <summary>
-        /// 
+        ///
         /// </summary>
         public override bool Equals(object? obj)
         {

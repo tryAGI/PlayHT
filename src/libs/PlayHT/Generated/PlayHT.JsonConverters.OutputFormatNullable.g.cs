@@ -20,7 +20,7 @@ namespace PlayHT.JsonConverters
                     {
                         return global::PlayHT.OutputFormatExtensions.ToEnum(stringValue);
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:

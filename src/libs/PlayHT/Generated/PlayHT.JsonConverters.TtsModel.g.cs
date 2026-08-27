@@ -20,7 +20,7 @@ namespace PlayHT.JsonConverters
                     {
                         return global::PlayHT.TtsModelExtensions.ToEnum(stringValue) ?? default;
                     }
-                    
+
                     break;
                 }
                 case global::System.Text.Json.JsonTokenType.Number:
