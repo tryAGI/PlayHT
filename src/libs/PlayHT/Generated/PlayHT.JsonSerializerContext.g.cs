@@ -28,6 +28,7 @@ namespace PlayHT
             typeof(global::PlayHT.JsonConverters.UnixTimestampJsonConverter),
         })]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PlayHT.JsonSerializerContextTypes))]
+    [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::System.Collections.Generic.List<object>), TypeInfoPropertyName = "SystemCollectionsGeneric_ObjectList")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PlayHT.OutputFormat), TypeInfoPropertyName = "OutputFormat2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PlayHT.TtsModel), TypeInfoPropertyName = "TtsModel2")]
     [global::System.Text.Json.Serialization.JsonSerializable(typeof(global::PlayHT.CreateSpeechRequest))]
