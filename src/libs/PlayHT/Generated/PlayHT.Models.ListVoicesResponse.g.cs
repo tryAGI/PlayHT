@@ -42,8 +42,8 @@ namespace PlayHT
         /// <summary>
         ///
         /// </summary>
-        public global::System.Collections.Generic.IList<global::PlayHT.Voice> PickListVoicesResponseVariant1() => IsListVoicesResponseVariant1
-            ? ListVoicesResponseVariant1!
+        public global::System.Collections.Generic.IList<global::PlayHT.Voice> PickListVoicesResponseVariant1() => ListVoicesResponseVariant1 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListVoicesResponseVariant1' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace PlayHT
         /// <summary>
         ///
         /// </summary>
-        public global::PlayHT.ListVoicesResponseVariant2 PickListVoicesResponseVariant2() => IsListVoicesResponseVariant2
-            ? ListVoicesResponseVariant2!
+        public global::PlayHT.ListVoicesResponseVariant2 PickListVoicesResponseVariant2() => ListVoicesResponseVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'ListVoicesResponseVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -154,13 +154,13 @@ namespace PlayHT
                 Validate();
             }
 
-            if (IsListVoicesResponseVariant1 && listVoicesResponseVariant1 != null)
+            if (ListVoicesResponseVariant1 is { } __value0 && listVoicesResponseVariant1 != null)
             {
-                return listVoicesResponseVariant1(ListVoicesResponseVariant1!);
+                return listVoicesResponseVariant1(__value0);
             }
-            else if (IsListVoicesResponseVariant2 && listVoicesResponseVariant2 != null)
+            else if (ListVoicesResponseVariant2 is { } __value1 && listVoicesResponseVariant2 != null)
             {
-                return listVoicesResponseVariant2(ListVoicesResponseVariant2!);
+                return listVoicesResponseVariant2(__value1);
             }
 
             return default(TResult);
@@ -180,13 +180,13 @@ namespace PlayHT
                 Validate();
             }
 
-            if (IsListVoicesResponseVariant1)
+            if (ListVoicesResponseVariant1 is { } __value0)
             {
-                listVoicesResponseVariant1?.Invoke(ListVoicesResponseVariant1!);
+                listVoicesResponseVariant1?.Invoke(__value0);
             }
-            else if (IsListVoicesResponseVariant2)
+            else if (ListVoicesResponseVariant2 is { } __value1)
             {
-                listVoicesResponseVariant2?.Invoke(ListVoicesResponseVariant2!);
+                listVoicesResponseVariant2?.Invoke(__value1);
             }
         }
 
@@ -203,13 +203,13 @@ namespace PlayHT
                 Validate();
             }
 
-            if (IsListVoicesResponseVariant1)
+            if (ListVoicesResponseVariant1 is { } __value0)
             {
-                listVoicesResponseVariant1?.Invoke(ListVoicesResponseVariant1!);
+                listVoicesResponseVariant1?.Invoke(__value0);
             }
-            else if (IsListVoicesResponseVariant2)
+            else if (ListVoicesResponseVariant2 is { } __value1)
             {
-                listVoicesResponseVariant2?.Invoke(ListVoicesResponseVariant2!);
+                listVoicesResponseVariant2?.Invoke(__value1);
             }
         }
 

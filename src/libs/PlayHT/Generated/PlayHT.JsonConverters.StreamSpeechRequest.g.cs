@@ -70,7 +70,7 @@ namespace PlayHT.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PlayHT.CreateSpeechRequest), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PlayHT.CreateSpeechRequest?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PlayHT.CreateSpeechRequest).Name}");
-                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.Create!, typeInfo);
+                var __element0 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickCreate(), typeInfo);
                 if (__element0.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
@@ -88,7 +88,7 @@ namespace PlayHT.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PlayHT.StreamSpeechRequestVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PlayHT.StreamSpeechRequestVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PlayHT.StreamSpeechRequestVariant2).Name}");
-                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.StreamSpeechRequestVariant2!, typeInfo);
+                var __element1 = global::System.Text.Json.JsonSerializer.SerializeToElement(value.PickStreamSpeechRequestVariant2(), typeInfo);
                 if (__element1.ValueKind != global::System.Text.Json.JsonValueKind.Object)
                 {
                     throw new global::System.Text.Json.JsonException("AllOf values must serialize as JSON objects.");
