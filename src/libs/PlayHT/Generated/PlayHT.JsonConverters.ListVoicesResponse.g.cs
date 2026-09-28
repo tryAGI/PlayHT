@@ -127,13 +127,13 @@ namespace PlayHT.JsonConverters
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::System.Collections.Generic.IList<global::PlayHT.Voice>), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::System.Collections.Generic.IList<global::PlayHT.Voice>?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::System.Collections.Generic.IList<global::PlayHT.Voice>).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListVoicesResponseVariant1!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickListVoicesResponseVariant1(), typeInfo);
             }
             else if (value.IsListVoicesResponseVariant2)
             {
                 var typeInfo = typeInfoResolver.GetTypeInfo(typeof(global::PlayHT.ListVoicesResponseVariant2), options) as global::System.Text.Json.Serialization.Metadata.JsonTypeInfo<global::PlayHT.ListVoicesResponseVariant2?> ??
                                throw new global::System.InvalidOperationException($"Cannot get type info for {typeof(global::PlayHT.ListVoicesResponseVariant2).Name}");
-                global::System.Text.Json.JsonSerializer.Serialize(writer, value.ListVoicesResponseVariant2!, typeInfo);
+                global::System.Text.Json.JsonSerializer.Serialize(writer, value.PickListVoicesResponseVariant2(), typeInfo);
             }
         }
     }

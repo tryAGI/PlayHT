@@ -42,8 +42,8 @@ namespace PlayHT
         /// <summary>
         ///
         /// </summary>
-        public global::PlayHT.CreateSpeechRequest PickCreate() => IsCreate
-            ? Create!
+        public global::PlayHT.CreateSpeechRequest PickCreate() => Create is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'Create' but the value was {ToString()}.");
 
         /// <summary>
@@ -79,8 +79,8 @@ namespace PlayHT
         /// <summary>
         ///
         /// </summary>
-        public global::PlayHT.StreamSpeechRequestVariant2 PickStreamSpeechRequestVariant2() => IsStreamSpeechRequestVariant2
-            ? StreamSpeechRequestVariant2!
+        public global::PlayHT.StreamSpeechRequestVariant2 PickStreamSpeechRequestVariant2() => StreamSpeechRequestVariant2 is { } value
+            ? value
             : throw new global::System.InvalidOperationException($"Expected union variant 'StreamSpeechRequestVariant2' but the value was {ToString()}.");
         /// <summary>
         ///
@@ -177,13 +177,13 @@ namespace PlayHT
                 Validate();
             }
 
-            if (IsCreate && create != null)
+            if (Create is { } __value0 && create != null)
             {
-                return create(Create!);
+                return create(__value0);
             }
-            else if (IsStreamSpeechRequestVariant2 && streamSpeechRequestVariant2 != null)
+            else if (StreamSpeechRequestVariant2 is { } __value1 && streamSpeechRequestVariant2 != null)
             {
-                return streamSpeechRequestVariant2(StreamSpeechRequestVariant2!);
+                return streamSpeechRequestVariant2(__value1);
             }
 
             return default(TResult);
@@ -203,13 +203,13 @@ namespace PlayHT
                 Validate();
             }
 
-            if (IsCreate)
+            if (Create is { } __value0)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value0);
             }
-            else if (IsStreamSpeechRequestVariant2)
+            else if (StreamSpeechRequestVariant2 is { } __value1)
             {
-                streamSpeechRequestVariant2?.Invoke(StreamSpeechRequestVariant2!);
+                streamSpeechRequestVariant2?.Invoke(__value1);
             }
         }
 
@@ -226,13 +226,13 @@ namespace PlayHT
                 Validate();
             }
 
-            if (IsCreate)
+            if (Create is { } __value0)
             {
-                create?.Invoke(Create!);
+                create?.Invoke(__value0);
             }
-            else if (IsStreamSpeechRequestVariant2)
+            else if (StreamSpeechRequestVariant2 is { } __value1)
             {
-                streamSpeechRequestVariant2?.Invoke(StreamSpeechRequestVariant2!);
+                streamSpeechRequestVariant2?.Invoke(__value1);
             }
         }
 
